@@ -1,0 +1,39 @@
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+    height: 770px;
+    width: 600px;
+    > div {
+        background-color: white;
+        > h2 {
+            color: #444DF2;
+            margin: 48px 0 12px 0;
+            background-color: white;
+            font-size: 46px;
+            font-weight: 700;
+        }
+        > span {
+            background-color: white;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        > form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            margin: 24px 0 0 0;
+            > div {
+                background-color: #ECEEFE;
+                > input {
+                    background-color: #ECEEFE;
+                    margin: 12px 0 12px 0;
+                }
+            }
+        }
+    }
+}
