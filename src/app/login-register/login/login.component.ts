@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent {
   fb = inject(FormBuilder);
   router = inject(Router);
 
-  form =this.fb.group({
+  form = this.fb.nonNullable.group({
     Email: ['', Validators.required],
     Password: ['', Validators.required],
   });
