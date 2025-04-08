@@ -1,1 +1,25 @@
-<p>login works!</p>
+<section>
+    <div>
+        <h2>Anmeldung</h2>
+        <span>Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit verwendest.</span>
+        <!-- Formular mit Angular-Formularbindung -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <!-- Eingabefeld für die E-Mail-Adresse -->
+            <div>
+                <!-- 'formControlName="Email"' bindet das Eingabefeld an das 'Email'-Formularsteuerungselement -->
+                <input type="text" formControlName="Email" placeholder="email">
+            </div>
+            <!-- Eingabefeld für das Passwort -->
+            <div>
+                <!-- 'formControlName="Password"' bindet das Eingabefeld an das 'Password'-Formularsteuerungselement -->
+                <input type="password" formControlName="Password" placeholder="password">
+            </div>
+            <!-- Absende-Schaltfläche für das Formular -->
+            <div>
+                <!-- Beim Klick auf die Schaltfläche wird das 'ngSubmit'-Event ausgelöst, 
+                    das die 'onSubmit()'-Methode in der zugehörigen Komponente aufruft -->
+                <button type="submit">Sign In</button>
+            </div>
+        </form>
+    </div>
+</section>
