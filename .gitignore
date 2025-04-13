@@ -42,5 +42,4 @@ testem.log
 Thumbs.db
 
 # Local environment files
-\src\app\environment.firebase.ts
-environment.firebase.ts
+src/app/environment.firebase.ts
