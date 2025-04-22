@@ -1,16 +1,22 @@
 <section>
     <nav>
-        <img src="" alt="">
         <div>
-            <img src="" alt="">
-            <!-- Hier den Namen der App einfügen -->
+            <a routerLink="/">Startseite</a>
         </div>
         <div>
-            <!-- Hier die Suchleiste einfügen -->
-        </div>
-        <div>
-            <!-- Hier den Namen des Avatars einfügen -->
-            <!-- Hir das bild vom Avadar einfügen -->
+            <!-- Shows options for non-logged-in users -->
+            @if (authService.currentUserSig() == null) {
+                <div>
+                    <a routerLink="/login">Login</a>
+                </div>
+            }
+
+            <!-- Shows logout options for logged in users -->
+             @if (authService.currentUserSig()) {
+                <div class="user-info">
+                    {{authService.currentUserSig()?.username}}
+                </div>
+             }
         </div>
     </nav>
 </section>
