@@ -1,22 +1,26 @@
 <section>
     <nav>
         <div>
-            <a routerLink="/">Startseite</a>
+            <!-- Platz für Logo/Link zur Startseite -->
+            <a routerLink="/">Home</a>
         </div>
         <div>
-            <!-- Shows options for non-logged-in users -->
             @if (authService.currentUserSig() == null) {
-                <div>
-                    <a routerLink="/login">Login</a>
+                <div class="auth-links">
+                    <a routerLink="/login" class="login-link">Login</a>
+                    <a routerLink="/register" class="register-link">Register</a>
                 </div>
             }
 
-            <!-- Shows logout options for logged in users -->
-             @if (authService.currentUserSig()) {
+            @if (authService.currentUserSig(); as user) {
                 <div class="user-info">
-                    {{authService.currentUserSig()?.username}}
+                    @if (user) {
+                        <img [src]="user" alt="User photo" class="user-avatar">
+                    }
+                    <span class="username">{{ user.username }}</span>
+                    <button class="logout-button">Logout</button>
                 </div>
-             }
+            }
         </div>
     </nav>
 </section>
